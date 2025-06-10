@@ -1,5 +1,5 @@
-# srophe-docker
-Docker image builder for the Srophe software. Based on the eXist-db Docker image [https://hub.docker.com/r/existdb/existdb]. 
+# LiC-docker
+Docker image builder for the LiC software. Based on the eXist-db Docker image [https://hub.docker.com/r/existdb/existdb]. 
 
 ### This image pre-loads the following eXist-db libraries and modules: 
 1. EXPATH Cryptographic Library Module v0.6 [http://exist-db.org/exist/apps/public-repo/packages/expath-crypto-exist-lib.html?eXist-db-min-version=4.4.0]
@@ -11,20 +11,12 @@ Docker image builder for the Srophe software. Based on the eXist-db Docker image
 2. A custom eXist-db conf.xml adds the RDF index collection.xconf used by the SPARQL module. 
 
 ## How To Use
-Pre-built images are available on DockerHub [].
+Build a up to date version of the LiC application [https://github.com/LiteratureInContext/LiC-app] and data repositories [https://github.com/LiteratureInContext/LiC-data]
+Move the new .xar files into the autodeploy directory. 
 
-This repository uses GitHub submodules [https://git-scm.com/book/en/v2/Git-Tools-Submodules] to load the most recent version of the Srophe application and the Syriaca.org data. In order to build the application
-and data packages you must explicitly pull the submodules when you clone the repository, and before rebuilding the image: 
+Build your new docker image: 
+docker build --platform linux/amd64 -t lic .
 
-Build the docker file
-```docker build -t srophe:v1.0 .```
-
-## Sponsors:
-The Center of Digital Humanities Research at Texas A&M University [http://codhr.dh.tamu.edu/]
-
-Digital Cultural Heritage Cluster at Vanderbilt University [https://my.vanderbilt.edu/digitalculturalheritage/]
-
-Syriaca.org: The Syriac Reference Portal [http://syriaca.org/]
 
 
 
